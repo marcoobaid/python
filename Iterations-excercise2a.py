@@ -1,8 +1,8 @@
 # Intialize variables
+total = 0
+count = 0
 maxi = 0
 mini = 0
-count = 0
-total = 0
 x = None
 
 # Calculate smallest value
@@ -27,17 +27,20 @@ while True :
     try: # Ensure only integers are used
         x = input("Enter a number: ")
         x = int(x)
-             
+        count = count +1
+        total = total + x
+        
         if count == 1:
             maxi = x
             mini = x
         else:
             maxi = largest(x,maxi)
             mini = smallest(x,mini) 
-                 
+
     except: # Excute when non-integer input
         print("Invalid input")
         continue
 
 print('Maximum is', maxi)
 print('Minimum is', mini)
+
