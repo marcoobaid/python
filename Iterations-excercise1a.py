@@ -7,8 +7,9 @@ x = None
 # Enter loop
 while True:
     x = input("Enter a number: ")
-    if x == "done":
-            break   # break loop
+    
+    if x == "done":   # break loop
+            break   
     
     try: # Ensure only integers are used
         x = int(x)
@@ -16,7 +17,7 @@ while True:
         total = total + x
         average = total / count
 
-    except: # Excute when non-integer input
+    except: # Execute when non-integer input
         print("Invalid input")
         continue
 
