@@ -1,8 +1,6 @@
-s = input('Enter a string: ')
-l = input('What letter should I count? ')
-
-result = s.count(l)
-
-print(f'I found {result} occurances of "{l}" in the string "{s}"')
-
+str = 'X-DSPAM-Confidence: 0.8475'
+atpos = str.find(' ') + 1
+extract = float(str[atpos:])
+#print(atpos)
+print(extract)
 
