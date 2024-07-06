@@ -15,3 +15,9 @@ while index < len(fruit):
 
 print('\nDone!\n')
 
+fruit = 'Apple'
+for char in fruit:
+    print(char)
+
+print('\nDone!\n')
+      
