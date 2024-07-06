@@ -9,8 +9,15 @@ s = input('Enter a string: ')
 l = input('What letter should I count? ')
 
 result = count(s,l)
-#print('\nI found', result, 'occurances of "', l + " in", '\n')
-print('\nI found', result, 'occurances of', l, 'in', s)
+
+#print('\nI found', result, 'occurances of', l, 'in', s)
+
+#sresult = str(result)
+#print('\nI found ' + sresult + ' occurance(s) of "' + l + '" in "' + s + '"')
+
+print(f'I found {result} occurances of "{l}" in the string "{s}"')
+
+
 
 
 
