@@ -32,7 +32,7 @@ for line in fhand:
     words = line.split()
     #print(words)
     ulist = funique(words, ulist)
-    #print(ulist)
+    ulist.sort()
 
 print(ulist)
 
