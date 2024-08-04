@@ -4,3 +4,27 @@
 # www.py4e.com/code3/words.txt
 #
 
+words = list() # list of words of a parsed line
+#uwords = list() # list of unique words
+d = dict() # dictionary of keys (unique words from words.txt)
+i = 0 # counter for unique words, use a value for dictionary keys 
+count = 0 # counter for words read from words.txt
+
+fhand = open('words.txt')
+
+for line in fhand:
+    line = line.rstrip()
+    words = line.split()
+    for word in words:
+        count = count + 1
+        if word not in d:
+            #uwords.append(word)
+            #d[word] = 'value' + str(i)
+            d[word] = i
+            i = i + 1
+
+print(d)
+print('======================================')
+print(f'Total words in words.txt: {count}')
+print(f'Unique words added to dictionary: {i}')
+print('======================================')
