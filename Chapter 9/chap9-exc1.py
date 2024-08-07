@@ -18,10 +18,11 @@ for line in fhand:
     for word in words:
         count = count + 1
         if word not in d:
+            i = i + 1
             #uwords.append(word)
             #d[word] = 'value' + str(i)
             d[word] = i
-            i = i + 1
+            
 
 print(d)
 print('======================================')
