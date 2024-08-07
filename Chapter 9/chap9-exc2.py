@@ -13,7 +13,6 @@
 #  Enter a file name: mbox-short.txt
 #  {'Fri': 20, 'Thu': 6, 'Sat': 1}
 #
-
 words = list()
 days = dict()
 
@@ -29,12 +28,7 @@ for line in fhand:
     words = line.split()
     if len(words) == 0 or words[0] != 'From':
         continue
-
     days[words[2]] = days.get(words[2],0) + 1
     #print(words)
-    #print(words[2],words[3])
 
 print(days)
-
-
-
