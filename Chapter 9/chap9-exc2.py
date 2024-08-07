@@ -20,7 +20,6 @@ days = dict()
 try:
     fhand = open(input('Enter a file name: '))
     #fhand = open('mbox-short.txt')
-    # #print(fhand)
 except:
     print('File does not exist! Try again :)')
     quit()
