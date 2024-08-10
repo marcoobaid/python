@@ -30,10 +30,13 @@ for line in fhand:
 #print(emails)
 
 largest = None
-for k in emails: # loop through keys
-    v = emails.get(k) # capture key value
+#for k in emails: # loop through keys
+#    v = emails.get(k) # capture key value
+for k,v in emails.items():
     if largest is None or v > largest:
         largest = v # largest value so far
         winner = k  # winnder key for largest vlaue
 
-print(winner, emails[winner])
+#print(winner, emails[winner])
+print(winner, largest)
+
