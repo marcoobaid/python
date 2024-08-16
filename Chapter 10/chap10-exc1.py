@@ -32,6 +32,10 @@ for line in fhand:
 
 lst = sorted( [ (v,k) for k,v in emails.items() ], reverse=True )
 
-t = tuple(lst[0])
-print(t[1], t[0])
+if len(lst) > 0 :
+    t = tuple(lst[0])
+    print(t[1], t[0])
+else:
+    print('No email addresses found. Check input file.')
+
 
