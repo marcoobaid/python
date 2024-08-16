@@ -18,7 +18,8 @@ words = list()
 emails = dict()
 
 try:
-    fhand = open(input('Enter a file name: '))
+    txtfile = input('Enter a file name: ')
+    fhand = open(txtfile)
 except:
     print('File does not exist! Try again :)')
     quit()
@@ -36,6 +37,8 @@ if len(lst) > 0 :
     t = tuple(lst[0])
     print(t[1], t[0])
 else:
-    print('No email addresses found. Check input file.')
+    print(f'No email addresses found. Review {txtfile}.')
+
+
 
 
