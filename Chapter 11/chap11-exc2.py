@@ -28,3 +28,4 @@ for line in fhand:
 
 avrg = int(total/count)
 print(avrg)
+
