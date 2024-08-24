@@ -22,11 +22,11 @@ fhand = open(input('Enter file: '))
 
 for line in fhand:
     line = line.rstrip()
-    if re.search(r'New\sRevision:\s', line):
-        x = re.findall(r'[0-9]{5}', line)
-        number = int(x[0])
-        count = count + 1
-        total = total + number
+    x = re.findall(r'New\sRevision: ([0-9]{5})', line)
+    if len(x) != 1: continue 
+    number = int(x[0])
+    count = count + 1
+    total = total + number
 
 avrg = int(total/count)
 print(avrg)
