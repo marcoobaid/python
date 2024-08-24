@@ -22,7 +22,7 @@ fhand = open(input('Enter file: '))
 
 for line in fhand:
     line = line.rstrip()
-    x = re.findall(r'New\sRevision: ([0-9]{5})', line)
+    x = re.findall(r'^New\sRevision: ([0-9]{5})', line)
     if len(x) != 1: continue 
     number = int(x[0])
     count = count + 1

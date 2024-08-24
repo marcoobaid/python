@@ -22,7 +22,7 @@ fhand = open(input('Enter file: '))
 
 for line in fhand:
     line = line.rstrip()
-    if re.search(r'New\sRevision:\s', line):
+    if re.search(r'^New\sRevision:\s', line):
         x = re.findall(r'[0-9]{5}', line)
         number = int(x[0])
         count = count + 1
