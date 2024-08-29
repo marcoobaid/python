@@ -21,14 +21,13 @@ except:
     print('\nInvalid URL. Please try again!\n')
     quit()
 
+# Find paragraph tags
 paragraphs = soup.find_all('p')
-#print(type(paragraphs))
+# Count extracted tags
 count = 0
 for p in paragraphs:
     count +=1
 
 print(f'{count} paragraph tags found on this page.')
-
-
 
 
