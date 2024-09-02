@@ -22,8 +22,8 @@ while True:
     print('Retrieving', url)
     uh = urllib.request.urlopen(url, context=ctx)
     data = uh.read().decode()
-    #print('Retrieved', len(data), 'characters', data[:20].replace('\n', ' '))
-    print(data)
+    print('Retrieved', len(data), 'characters', data[:20].replace('\n', ' '))
+    #print(data)
 
     try:
         js = json.loads(data)
