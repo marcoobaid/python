@@ -1,0 +1,69 @@
+{
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "datasource": {
+                    "sourcename": "openstreetmap",
+                    "attribution": "© OpenStreetMap contributors",
+                    "license": "Open Database License",
+                    "url": "https://www.openstreetmap.org/copyright"
+                },
+                "country": "United States",
+                "country_code": "us",
+                "state": "Texas",
+                "county": "Harris County",
+                "city": "Houston",
+                "lon": -95.3676974,
+                "lat": 29.7589382,
+                "state_code": "TX",
+                "result_type": "city",
+                "formatted": "Houston, TX, United States of America",
+                "address_line1": "Houston, TX",
+                "address_line2": "United States of America",
+                "category": "administrative",
+                "timezone": {
+                    "display_name": "America/Chicago",
+                    "offset_STD": "-06:00",
+                    "offset_STD_seconds": -21600,
+                    "offset_DST": "-05:00",
+                    "offset_DST_seconds": -18000,
+                    "abbreviation_STD": "CST",
+                    "abbreviation_DST": "CDT"
+                },
+                "plus_code": "76X6QJ5J+HW",
+                "plus_code_short": "5J+HW Houston, Harris County, United States",
+                "rank": {
+                    "importance": 0.7781884465091046,
+                    "popularity": 8.156119013773122,
+                    "confidence": 1,
+                    "confidence_city_level": 1,
+                    "match_type": "full_match"
+                },
+                "place_id": "51c0f4ac5a88d757c05963af1cc649c23d40f00101f9018f07290000000000c00208"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -95.3676974,
+                    29.7589382
+                ]
+            },
+            "bbox": [
+                -95.9097419,
+                29.5370705,
+                -95.0120525,
+                30.1103506
+            ]
+        }
+    ],
+    "query": {
+        "text": "Houston, TX",
+        "parsed": {
+            "city": "houston",
+            "state": "tx",
+            "expected_type": "city"
+        }
+    },
+    "type": "FeatureCollection"
+}
