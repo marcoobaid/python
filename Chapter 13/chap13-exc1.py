@@ -22,7 +22,7 @@ while True:
     print('Retrieving', url)
     uh = urllib.request.urlopen(url, context=ctx)
     data = uh.read().decode()
-    print('Retrieved', len(data), 'characters', data[:20].replace('\n', ' '))
+    print('Retrieved', len(data), 'characters') #, data[:20].replace('\n', ' '))
     #print(data)
 
     try:
@@ -41,10 +41,16 @@ while True:
         break
 
     # print(json.dumps(js, indent=4))
-
     lat = js['features'][0]['properties']['lat']
     lon = js['features'][0]['properties']['lon']
     print('lat', lat, 'lon', lon)
     location = js['features'][0]['properties']['formatted']
     print(location)
+    
+    # Lookup Country Code 
+    try:
+        country_code = js['features'][0]['properties']['country_code']
+        print('Country Code: ', country_code.upper())
+    except:
+        print('No Country Code Found for this location.')
 
