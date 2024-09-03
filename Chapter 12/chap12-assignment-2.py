@@ -1,4 +1,4 @@
-# The program will use urllib to read the HTML from the data files below, extract the href= vaues from
+# The program will use urllib to read the HTML from the data files below, extract the href= values from
 # the anchor tags, scan for a tag that is in a particular position relative to the first name in 
 # the list, follow that link and repeat the process a number of times and report the last name you find.
 # 
@@ -23,29 +23,27 @@ ctx = ssl.create_default_context()
 ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
 
+# Function to parse a page and generate tags
+def parsepage(link):
+    html = urllib.request.urlopen(link, context=ctx).read()
+    soup = BeautifulSoup(html, 'html.parser')
+    tags = soup('a')
+    return tags
+
+# User input and validation
 try:
     url = input('Enter - ')
-    html = urllib.request.urlopen(url, context=ctx).read()
-    soup = BeautifulSoup(html, 'html.parser')
-    tags = soup('a')
+    urllib.request.urlopen(url, context=ctx).read() # validate url
+    count = int(input('Enter count: '))
+    position = int(input('Enter position: '))
+    print(f'Retrieving: {url}')
 except:
-    print('Invalid URL. Please try again!')
+    print('Invalid entry. Please try again!')
     quit()
 
-try:
-     count = int(input('Enter count: '))
-     position = int(input('Enter position: '))
-except:
-     print("Count and Position must be a digit. Please try again!")
-     quit() 
-
-    
-print(f'Retrieving: {url}')
-
+# Repeat process based on user selection
 while count > 0:
-    html = urllib.request.urlopen(url, context=ctx).read()
-    soup = BeautifulSoup(html, 'html.parser')
-    tags = soup('a')
+    tags = parsepage(url)
     i = 1
     for tag in tags:
         if i == position:
