@@ -16,8 +16,7 @@ fhand = open('mbox.txt')
 
 for line in fhand:
     if not line.startswith('From: '): continue
-    match = re.findall(r'@(\S+)', line)
-    org = match[0]
+    org = re.findall(r'@(\S+)', line)[0]
     cur.execute('SELECT count FROM Counts WHERE org = ? ', (org,))
     row = cur.fetchone()
     if row is None:
