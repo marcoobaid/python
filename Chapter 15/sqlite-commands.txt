@@ -1,0 +1,34 @@
+# These are common SQLite Command in Python
+
+# SQLite - CRUD
+
+CREATE TABLE Track (title TEXT, plays INTEGER)
+INSERT INTO Track (title, plays) VALUES ('My Way', 15)
+SELECT * FROM Track WHERE title = 'My Way'
+SELECT title,plays FROM Track ORDER BY title
+UPDATE Track SET plays = 16 WHERE title = 'My Way'
+DELETE FROM Track WHERE title = 'My Way'
+
+# Python
+import sqlite3
+
+conn = sqlite3.connect('music.sqlite')
+cur = conn.cursor()
+
+cur.execute('INSERT INTO Track (title, plays) VALUES (?, ?)', ('Thunderstruck', 20))
+cur.execute('INSERT INTO Track (title, plays) VALUES (?, ?)', ('My Way', 15))
+
+conn.commit()
+
+print('Track:')
+
+cur.execute('SELECT title, plays FROM Track')
+for row in cur:
+     print(row)
+
+cur.execute('DELETE FROM Track WHERE plays < 100')
+conn.commit()
+
+cur.close()
+
+# Code: https://www.py4e.com/code3/db2.py
