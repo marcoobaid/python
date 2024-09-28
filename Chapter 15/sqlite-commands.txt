@@ -1,4 +1,4 @@
-# These are common SQLite Command in Python
+# These are common SQLite commands and a sample Python usage
 
 # SQLite - CRUD
 
