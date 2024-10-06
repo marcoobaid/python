@@ -1,15 +1,30 @@
 # These are common SQLite commands and a sample Python usage
 
+#############################################
 # SQLite - CRUD
-
+#############################################
 CREATE TABLE Track (title TEXT, plays INTEGER)
 INSERT INTO Track (title, plays) VALUES ('My Way', 15)
 SELECT * FROM Track WHERE title = 'My Way'
 SELECT title,plays FROM Track ORDER BY title
 UPDATE Track SET plays = 16 WHERE title = 'My Way'
 DELETE FROM Track WHERE title = 'My Way'
+# Multiple Tables ---> Track and Artist tables below
+SELECT title, plays, name, eyes FROM Track JOIN Artist ON Track.artist_id = Artist.id;
+# Automatically create primary keys ---> Add PRIMARY KEY to the statemetn
+CREATE TABLE Artist (id INTEGER PRIMARY KEY, name TEXT, eyes TEXT);
+# Retrieve data from SQLite built-in-function last _insert_rowid()
+select last_insert_rowid();
+# Adding an "index" to a text column that we intend to use in WHERE clauses
+CREATE INDEX artist_name ON Artist(name);
+# These text columns that are used to find rows based on some information in the “real world” 
+# like the name of an artist are called Logical keys.
+SELECT title, plays, name, eyes FROM Track JOIN Artist ON Track.artist_id = Artist.id
+WHERE Artist.name = 'Frank Sinatra'
 
-# Python
+###############################################
+# Python example of invoking SQLite statements
+###############################################
 import sqlite3
 
 conn = sqlite3.connect('music.sqlite')
